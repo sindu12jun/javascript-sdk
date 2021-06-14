@@ -11,7 +11,7 @@
     "test": "cross-env NODE_ENV=test jest",
     "test:ledger": "qunit --require babel-polyfiltypl tests-ledger/tests.js",
     "test:ledger:browser": "./tests-ledger/run-browser-tests.sh",
-    "build": "rimraf lib && tsc --emitDeclarationOnly && babel --extensions '.ts' src -d lib",
+    "build": "rimraf lib && tsc --emitDeclarationOnly && babel --extensions '.ts' src -d lib && cp sample-package.json lib/package.json",
     "build:docs": "rimraf docs/api-docs && typedoc --excludeExternals --excludeNotDocumented --readme none --out docs/api-docs --hideBreadcrumbs --disableSources",
     "prepublishOnly": "npm run build",
     "clean": "rimraf lib",
